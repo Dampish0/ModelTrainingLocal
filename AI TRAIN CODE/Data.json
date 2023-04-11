@@ -8,7 +8,7 @@
         "eval_data" : "QuickTrain/vic_eval_DAT.json",
         "out_dir" : "QuickTrain/vic_eval_DAT.json",
 
-        "MICRO_BATCH_SIZE = 8" : 0,
+        "MICRO_BATCH_SIZE" : 0,
         "GRADIENT_ACCUMULATION_STEPS" : 8,
         "EPOCHS" : 10,
         "LEARNING_RATE" : 3e-5,
