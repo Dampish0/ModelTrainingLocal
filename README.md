@@ -44,4 +44,8 @@ CUTOFF_LEN is the length of string before it cuts it off.
 
 MAX_STEP is Easier to use than Epochs, basically gives a max amount of steps and ignores epoch number, for example if you give it 1000 max steps that could equal to 7.61 epochs, this number is completely random.
 
+I rather you DO NOT use the last variables as they are hard to work with, unless you know what you are doing. Only play with CPU_MODE.
+![image2](/image41.png)
+Im too lazy to explain them so good luck.
+
 Thanks for using my code
