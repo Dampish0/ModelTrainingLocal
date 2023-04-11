@@ -94,7 +94,7 @@ training_args = transformers.TrainingArguments(
         output_dir=json_file[0]["out_dir"],
         save_total_limit=10,
         max_steps=MAX_STEP,
-        auto_find_batch_size=True if json_file[0]["MICRO_BATCH_SIZE"] is 0 else False,
+        auto_find_batch_size=True if json_file[0]["MICRO_BATCH_SIZE"] == 0 else False,
         per_device_eval_batch_size=1,  # Set batch size for evaluation
         eval_accumulation_steps=1,
         evaluation_strategy="steps",
