@@ -16,7 +16,7 @@ If you use my code, give credit.
 So ill make it short
 You can change variables in the json file here called "Data.json".
 
-![image1](/image21.png)
+![image1](/Image21.png)
 "huggingface_access_token" is the token for it to write to huggingface, if left blank it will not push to huggingface.co otherwise fill.
 "model" is the actual model from huggingface.co or a local model of choice, its better to use huggingface though.
 "model_tokenizer" is the base model you are using, the one you are fine tuning, you need the orginal tokenizer to avoid issues, this is simple.
