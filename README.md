@@ -6,7 +6,7 @@ https://creativecommons.org/licenses/by-nc/4.0/
 
 For training on online jupyter notebooks: https://github.com/Dampish0/ModelTrainingLocal
 
-HELLO, HERE IS THE CODE FOR TRAINING ON LOCAL PC.
+HELLO, HERE IS THE CODE FOR TRAINING ON LOCAL PC, ANY MODEL WORKS AS LONG AS IT RUNS ON PYTORCH.
 
 Here is training data, 2 DATASET DONT GET THEM CONFUSED!!
 https://huggingface.co/datasets/Dampish/QuickTrain/tree/main
