@@ -113,7 +113,7 @@ trainer = transformers.Trainer(
     eval_dataset=valid_data["train"],
     data_collator=transformers.DataCollatorForLanguageModeling(tokenizer, mlm=False),
 )
-
+print("training begun.")
 
 
 trainer.train(resume_from_checkpoint=False)
