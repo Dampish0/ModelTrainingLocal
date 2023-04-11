@@ -29,13 +29,13 @@ print("model loaded")
 tokenizer.pad_token = tokenizer.eos_token
 tokenizer.pad_token_id = tokenizer.eos_token_id
 
-MICRO_BATCH_SIZE = 8  # Generally 4 for cpu, 8 for gpu, higher batch = higher ram.
+MICRO_BATCH_SIZE = json_file[0]["MICRO_BATCH_SIZE"]  # Generally 4 for cpu, 8 for gpu, higher batch = higher ram.
 #BATCH_SIZE = 192
-GRADIENT_ACCUMULATION_STEPS = 8 #BATCH_SIZE // MICRO_BATCH_SIZE
-EPOCHS = 10  # paper uses 3
-LEARNING_RATE = 3e-5  # Should be between 2e-5 <-> 5e-5 could be more could be less.
-CUTOFF_LEN = 400  # 256 accounts for about 96% of the data
-MAX_STEP = 0
+GRADIENT_ACCUMULATION_STEPS = json_file[0]["GRADIENT_ACCUMULATION_STEPS"] #BATCH_SIZE // MICRO_BATCH_SIZE
+EPOCHS = json_file[0]["EPOCHS"]  # Heavily varies depending on how u want to train it.
+LEARNING_RATE = json_file[0]["LEARNING_RATE"]  # Should be between 2e-5 <-> 5e-5 could be more could be less.
+CUTOFF_LEN = json_file[0]["CUTOFF_LEN"]  # 400 is a decent length.
+MAX_STEP = json_file[0]["MAX_STEP"] # Easier to use than Epochs.
 
 def generate_prompt(data_point):
     if data_point["instruction"]:
@@ -81,7 +81,7 @@ valid_data = valid_data.shuffle().map(
     )
 )
 
-print("data conversion step 2 done \n")
+print("data conversion step 2 done \n ")
 print("Training starting!")
 training_args = transformers.TrainingArguments(
     per_device_train_batch_size=MICRO_BATCH_SIZE,
@@ -89,30 +89,30 @@ training_args = transformers.TrainingArguments(
         warmup_steps=5,
         num_train_epochs=EPOCHS,
         learning_rate=LEARNING_RATE,
-        fp16=True,#False For NO GPU, OTHERWISE TRUE IF YOU HAVE A GPU.
+        fp16=True if json_file[0]["CPU_MODE"] is False else False,#False For NO GPU, OTHERWISE TRUE IF YOU HAVE A GPU.
         logging_steps=1,
-        output_dir="json_file[0]["out_dir"]",
+        output_dir=json_file[0]["out_dir"],
         save_total_limit=10,
         max_steps=MAX_STEP,
-        auto_find_batch_size=True,
+        auto_find_batch_size=True if json_file[0]["MICRO_BATCH_SIZE"] is 0 else False,
         per_device_eval_batch_size=1,  # Set batch size for evaluation
         eval_accumulation_steps=1,
         evaluation_strategy="steps",
-        load_best_model_at_end=False,  # Save best model at the end of training
-        save_steps=2000,
-        eval_steps=8,
-        no_cuda=False,##CPU = TRUE/GPU = FALSE
+        load_best_model_at_end=json_file[0]["load_best_model_at_end"],  # Save best model at the end of training
+        save_steps=json_file[0]["save_steps"],
+        eval_steps=json_file[0]["eval_steps"],
+        no_cuda=False if json_file[0]["CPU_MODE"] is False else True,##CPU = TRUE/GPU = FALSE
         #tpu_num_cores=6,
-    )
+)
 
 
 trainer = transformers.Trainer(
     model=model,
     args=training_args,
     train_dataset=data["train"],
-    eval_dataset=valid_data,
+    eval_dataset=valid_data["train"],
     data_collator=transformers.DataCollatorForLanguageModeling(tokenizer, mlm=False),
-    )
+)
 
 
 
