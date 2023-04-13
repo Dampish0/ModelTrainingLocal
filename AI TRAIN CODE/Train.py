@@ -58,8 +58,8 @@ def generate_prompt(data_point):
 ### Response:
 {data_point["output"]}"""
 
-valid_data = valid_data.map(lambda data_point: {"prompt": tokenizer(generate_prompt(data_point))})
-data = data.map(lambda data_point: {"prompt": tokenizer(generate_prompt(data_point))})
+#valid_data = valid_data.map(lambda data_point: {"prompt": tokenizer(generate_prompt(data_point))})
+#data = data.map(lambda data_point: {"prompt": tokenizer(generate_prompt(data_point))})
 
 print("data conversion step 1 done")
 tokenizer.pad_token_id = 0  # unk. we want this to be different from the eos token
