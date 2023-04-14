@@ -14,6 +14,6 @@ inst("bitsandbytes")
 inst("accelerate")
 inst("sentencepiece")
 inst("gradio")
-
+inst("numba")
 
 Repo.clone_from("https://huggingface.co/datasets/Dampish/QuickTrain", to_path="QuickTrain")
