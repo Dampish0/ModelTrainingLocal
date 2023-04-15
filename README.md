@@ -5,7 +5,7 @@ cc-by-nc-4.0, Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
 https://creativecommons.org/licenses/by-nc/4.0/
 If you use my code, give credit.
 ----------
-For training on online jupyter notebooks: https://github.com/Dampish0/ModelTrainingLocal
+For training on online jupyter notebooks: https://github.com/Dampish0/ModelTrainingColab
 
 HELLO, HERE IS THE CODE FOR TRAINING ON LOCAL PC, ANY MODEL WORKS AS LONG AS IT RUNS ON PYTORCH.
 
