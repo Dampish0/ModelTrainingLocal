@@ -13,7 +13,9 @@ https://huggingface.co/datasets/Dampish/QuickTrain/tree/main
 
 If you use my code, give credit.
 
-So ill make it short
+So ill make it short,
+Download this, run setup.py, change settings in data.json, run train.py
+
 You can change variables in the json file here called "Data.json".
 
 ![image1](/Image21.png)
