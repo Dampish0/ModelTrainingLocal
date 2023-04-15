@@ -1,17 +1,16 @@
 # ModelTrainingLocal
-
+----------
 License:
 cc-by-nc-4.0, Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
 https://creativecommons.org/licenses/by-nc/4.0/
-
+If you use my code, give credit.
+----------
 For training on online jupyter notebooks: https://github.com/Dampish0/ModelTrainingLocal
 
 HELLO, HERE IS THE CODE FOR TRAINING ON LOCAL PC, ANY MODEL WORKS AS LONG AS IT RUNS ON PYTORCH.
 
 Here is training data, 2 DATASET DONT GET THEM CONFUSED!!
 https://huggingface.co/datasets/Dampish/QuickTrain/tree/main
-
-If you use my code, give credit.
 
 So ill make it short,
 Download this, run setup.py, change settings in data.json, run train.py
