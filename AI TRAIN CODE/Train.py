@@ -117,7 +117,7 @@ trainer = transformers.Trainer(
 print("training begun.")
 
 
-trainer.train(resume_from_checkpoint=False)
+trainer.train(resume_from_checkpoint=json_file[0]["Load_Checkpoint"])
 
 trainer.save_model(json_file[0]["out_dir"])
 tokenizer.save_pretrained(json_file[0]["out_dir"])
