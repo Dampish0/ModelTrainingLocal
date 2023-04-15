@@ -16,6 +16,7 @@
         "MAX_STEP" : 0,
 
         "CPU_MODE" : false,
+        "PreProcessedData?" : false,
 
         "Extra data, you dont need to touch the following, rather not touch unlees yk what u are doing" : true,
         "eval_steps" : 8,
