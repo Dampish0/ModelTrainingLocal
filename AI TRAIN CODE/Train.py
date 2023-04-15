@@ -37,7 +37,7 @@ LEARNING_RATE = json_file[0]["LEARNING_RATE"]  # Should be between 2e-5 <-> 5e-5
 CUTOFF_LEN = json_file[0]["CUTOFF_LEN"]  # 400 is a decent length.
 MAX_STEP = json_file[0]["MAX_STEP"] # Easier to use than Epochs.
 
-if(!json_file[0]['PreProcessedData?']):
+if not json_file[0]['PreProcessedData?']:
     def generate_prompt(data_point):
         if data_point["instruction"]:
             return f"""Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
