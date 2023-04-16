@@ -7,7 +7,7 @@
         "data" : "QuickTrain/Alp_vic_unfiltered.json",
         "eval_data" : "QuickTrain/vic_eval_DAT.json",
         "out_dir" : "ELIAI_MODELS",
-        "ProccessedData_outDIR" : "PreprocessedData"
+        "ProccessedData_outDIR" : "PreprocessedData",
 
         "MICRO_BATCH_SIZE" : 0,
         "GRADIENT_ACCUMULATION_STEPS" : 8,
