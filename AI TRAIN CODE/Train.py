@@ -20,7 +20,7 @@ json_file = json.load(open("Data.json"))
 if(json_file[0]["huggingface_access_token"] != ""):
     login(json_file[0]["huggingface_access_token"]) # non-blocking login
 
-data = load_dataset("json", data_files=json_file[0]["data"])
+data = load_dataset("json", data_files=json_file[0]["data"]) if json_file[0]['PreProcessedData?'] is true else load_dataset("json", json_file[0]["ProccessedData_outDIR"])
 valid_data = load_dataset("json", data_files=json_file[0]["eval_data"])
 print("data loaded")
 model = AutoModelForCausalLM.from_pretrained(json_file[0]["model"])
@@ -91,7 +91,7 @@ if not json_file[0]['PreProcessedData?']:
             print(i)
             
     import json
-    with open('ProcessedData/UltraSet-L-BLOOM2.json', 'w') as f:
+    with open(json_file[0]["ProccessedData_outDIR"], 'w') as f:
         json.dump(json_data, f)
     
 
