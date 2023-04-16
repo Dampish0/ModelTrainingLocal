@@ -1,6 +1,5 @@
 import subprocess
 import sys
-from git import Repo
 
 
 def inst(package, ):
@@ -15,5 +14,8 @@ inst("accelerate")
 inst("sentencepiece")
 inst("gradio")
 inst("numba")
+
+from git import Repo
+
 
 Repo.clone_from("https://huggingface.co/datasets/Dampish/QuickTrain", to_path="QuickTrain")
