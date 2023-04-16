@@ -83,7 +83,7 @@ if not json_file[0]['PreProcessedData?']:
     )
     
 
-        print("Saving data, this step might take a while, dont worry")
+    print("Saving data, this step might take a while, dont worry")
     json_data = []
     for i in range(len(data["train"])):
         json_data.append(data['train'][i])
