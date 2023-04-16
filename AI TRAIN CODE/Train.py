@@ -81,6 +81,19 @@ if not json_file[0]['PreProcessedData?']:
             padding="max_length",
         )
     )
+    
+
+        print("Saving data, this step might take a while, dont worry")
+    json_data = []
+    for i in range(len(data["train"])):
+        json_data.append(data['train'][i])
+        if(i % 1000 == 0):
+            print(i)
+            
+    import json
+    with open('ProcessedData/UltraSet-L-BLOOM2.json', 'w') as f:
+        json.dump(json_data, f)
+    
 
 print("data conversion step 2 done \n ")
 print("Training starting!")
