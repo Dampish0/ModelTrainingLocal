@@ -83,12 +83,12 @@ if not json_file[0]['PreProcessedData?']:
     )
     
 
-    print("Saving data, this step might take a while, dont worry")
+    print("Saving data, this step might take a while, dont worry!")
     json_data = []
     for i in range(len(data["train"])):
         json_data.append(data['train'][i])
         if(i % 1000 == 0):
-            print(i)
+            print(str((i/len(data["train"]))) + "%")
             
     import json
     with open(json_file[0]["ProccessedData_outDIR"], 'w') as f:
