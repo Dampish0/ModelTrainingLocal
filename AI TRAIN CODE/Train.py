@@ -136,7 +136,7 @@ trainer.save_model(json_file[0]["out_dir"])
 tokenizer.save_pretrained(json_file[0]["out_dir"])
 print("training done and saved, check foler " + json_file[0]["out_dir"])
 if(json_file[0]["huggingface_access_token"] != ""):
-    model.push_to_hub("Dampish/ELIAI_1B", use_auth_token=True)
+    model.push_to_hub(json_file[0]['huggingface_directory'], use_auth_token=True)
 
     logout() # logout completely
 
