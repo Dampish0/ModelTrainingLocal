@@ -4,7 +4,7 @@ License:
 cc-by-nc-4.0, Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
 https://creativecommons.org/licenses/by-nc/4.0/
 If you use my code, give credit.
-----------
+-----------
 For training on online jupyter notebooks: https://github.com/Dampish0/ModelTrainingColab
 
 HELLO, HERE IS THE CODE FOR TRAINING ON LOCAL PC, ANY MODEL WORKS AS LONG AS IT RUNS ON PYTORCH.
@@ -13,9 +13,9 @@ Here is training data, 2 DATASET DONT GET THEM CONFUSED!!
 https://huggingface.co/datasets/Dampish/QuickTrain/tree/main
 
 So ill make it short,
-Download this, run setup.py, change settings in data.json, run train.py
-
-You can change variables in the json file here called "Data.json".
+Download this, run Setup.bat.
+To change settings, go to "Code" Folder and open Settings.json, run Train.py when you are happy with your settings.
+Settings.json will look like the following.
 
 ![image1](/Image21.png)
 "huggingface_access_token" is the token for it to write to huggingface, if left blank it will not push to huggingface.co otherwise fill.
@@ -24,13 +24,21 @@ You can change variables in the json file here called "Data.json".
 "Data" is the actual training data.
 "valid_data" is the validation data.
 "out_dir" is the directory where you where you want the output and/or what its going to be named. Will automatically make on if it doesnt exist.
+"PreProcessedData?" is incase you ran Train.py before and completely mapped your dataset, in recent versions Train.py will generate a new json in the PreProcesses folder, if you have set "PreProcessedData?" to true it will take that file instead so you can skip the mapping the second time.
+"Load_Checkpoint" Means that you cancled your previous run and have a premade checkpoint that you want to start at.
+
+If you are broke and got not GPU, there is a setting for you to use CPU instead, keep in mind this is atleast 6 times slower than GPU, Turn "CPU_MODE" to True.
 
 
-the only parameters u need to worry about are gradient_accumulation_steps
-and learning rate
-epoch is basically for how long you want to train it
+It is extremly important to change the following settings if you want the files somewhere else or have the data saved somewhere else.
+![image5](/image51.png)
+
+
+the only parameters u need to worry about are "gradient_accumulation_steps"
+and "learning-rate"
+"epoch" is basically for how long you want to train it
 its easier to limit training with max step than using epoch
-cutoff_len is not important, it only changes how long the instruction is before it cuts it off
+"cutoff_len" is not important, it only changes how long the instruction is before it cuts it off
 some models have a max limit of 1024 tokens
 
 ![image2](/image31.png)
