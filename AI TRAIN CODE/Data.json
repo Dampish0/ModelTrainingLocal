@@ -2,7 +2,7 @@
 
     {
         "huggingface_access_token" : "",
-        "huggingface_directory" : "Dampish/ELIAI_1B"
+        "huggingface_directory" : "Dampish/ELIAI_1B",
         "model":"bigscience/bloom-560M",
         "model_tokenizer" : "bigscience/bloom-560M",
         "data" : "QuickTrain/Alp_vic_unfiltered.json",
