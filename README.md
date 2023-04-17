@@ -31,6 +31,7 @@ If you are broke and got not GPU, there is a setting for you to use CPU instead,
 
 
 It is extremly important to change the following settings if you want the files somewhere else or have the data saved somewhere else.
+
 ![image5](/image51.png)
 
 
