@@ -72,3 +72,4 @@ while True:
 
     for s in generation_output:
         print(tokenizer.decode(s))
+    print("\n")
